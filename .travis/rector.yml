@@ -1,2 +1,5 @@
 imports:
     - { resource: "shared-config.yml" }
+
+services:
+    Rector\DeadCode\Rector\ClassMethod\RemoveOverriddenValuesRector: ~

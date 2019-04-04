@@ -1,7 +1,3 @@
-imports:
-    - { resource: "../config/drupal8.yml" }
-    - { resource: "../config/drupal86-deprecations.yml" }
-
 parameters:
     autoload_paths:
         - '.drupal/web/autoload.php'

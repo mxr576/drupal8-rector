@@ -26,21 +26,12 @@ env:
     - COMPOSER_PROCESS_TIMEOUT=0
   matrix:
     - CONFIG=rector.yml ANALYZE=".drupal/web/core/modules/node"
-    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/core/modules/node"
-    - CONFIG=rector.yml ANALYZE=".drupal/web/core/modules/system"
-    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/core/modules/system"
-    - CONFIG=rector.yml ANALYZE=".drupal/web/modules/contrib/commerce"
-    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/modules/contrib/commerce"
-    - CONFIG=rector.yml ANALYZE=".drupal/web/modules/contrib/apigee_edge"
-    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/modules/contrib/apigee_edge"
 install:
   - echo -en "max_execution_time = 0\nxdebug.default_enable = 0" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   # Speed up Drupal core installation.
   - composer global require hirak/prestissimo:^0.3.7 zaporylie/composer-drupal-optimizations:^1.1
   - composer install
   - composer download-drupal-core
-  - if [[ "$ANALYZE" = ".drupal/web/modules/contrib/commerce" ]]; then composer require drupal/commerce -d .drupal; fi
-  - if [[ "$ANALYZE" = ".drupal/web/modules/contrib/apigee_edge" ]]; then composer require drupal/apigee_edge -d .drupal; fi
 
 script:
   - set -e
