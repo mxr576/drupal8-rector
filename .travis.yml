@@ -26,15 +26,15 @@ env:
     - COMPOSER_PROCESS_TIMEOUT=0
   matrix:
     - CONFIG=rector.yml ANALYZE=".drupal/web/core/modules/node"
-    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/core/modules/node"
+#    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/core/modules/node"
     - CONFIG=rector.yml ANALYZE=".drupal/web/core/modules/system"
-    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/core/modules/system"
+#    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/core/modules/system"
     - CONFIG=rector.yml ANALYZE=".drupal/web/modules/contrib/commerce"
-    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/modules/contrib/commerce"
+#    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/modules/contrib/commerce"
     - CONFIG=rector.yml ANALYZE=".drupal/web/modules/contrib/apigee_edge"
-    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/modules/contrib/apigee_edge"
+#    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/modules/contrib/apigee_edge"
     - CONFIG=rector.yml ANALYZE=".drupal/web/modules/contrib/features"
-    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/modules/contrib/features"
+#    - CONFIG=rector-experimental.yml ANALYZE=".drupal/web/modules/contrib/features"
 install:
   - echo -en "max_execution_time = 0\nxdebug.default_enable = 0" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   # Speed up Drupal core installation.
