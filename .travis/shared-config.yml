@@ -1,6 +1,6 @@
-imports:
-    - { resource: "../config/drupal8.yml" }
-    - { resource: "../config/drupal86-deprecations.yml" }
+#imports:
+#    - { resource: "../config/drupal8.yml" }
+#    - { resource: "../config/drupal86-deprecations.yml" }
 
 parameters:
     autoload_paths:
@@ -12,3 +12,6 @@ parameters:
         - '*/Tests/*'
     file_extensions:
         - module
+
+services:
+    Rector\Php\Rector\FunctionLike\ReturnTypeDeclarationRector: ~
